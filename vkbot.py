@@ -46,6 +46,7 @@ def enter_status(id_f):
                                     SET status = '{body[0:39]}'
                                     WHERE uid = {id_f}
                                 """)
+                conn.commit()
                 send_message(id_f, 'Статус установлен', keyboard_game)
                 break
 
