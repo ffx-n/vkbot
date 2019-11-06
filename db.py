@@ -47,8 +47,8 @@ def add_new_user(uid):
     cursor.execute(sql)
     count = cursor.fetchall()
     if len(count) == 0:
-        users = [(uid, 5, 1, '0', 150)]
-        cursor.executemany("INSERT INTO users VALUES ( ?,?,?,?,? )", users)
+        users = [(uid, 5, 1, '0', 150,' ')]
+        cursor.executemany("INSERT INTO users VALUES ( ?,?,?,?,?,? )", users)
         conn.commit()
 
 def get_clicked(id):
