@@ -35,10 +35,13 @@ def top_users():
     numbers.sort(key=sort_col, reverse=True)
     print(numbers)
     top10 = ''
-    for i in range(0, len(numbers)):
-        status = numbers[i][5]
-        rank_index = int(numbers[i][3])
-        top10+=f'{i+1}. @id{numbers[i][0]}, Баланс: {numbers[i][1]} | Ранг: {ranks[rank_index]} | Личный статус: {status}\n'
+    for i in range(0, 9):
+        try:
+            status = numbers[i][5]
+            rank_index = int(numbers[i][3])
+            top10+=f'{i+1}. @id{numbers[i][0]}, Баланс: {numbers[i][1]} | Ранг: {ranks[rank_index]} | Личный статус: {status}\n'
+        except:
+            pass
     return top10
 
 
@@ -47,7 +50,7 @@ def add_new_user(uid):
     cursor.execute(sql)
     count = cursor.fetchall()
     if len(count) == 0:
-        users = [(uid, 5, 1, '0', 150,' ')]
+        users = [(uid, 5, 1, '0', 150, ' ')]
         cursor.executemany("INSERT INTO users VALUES ( ?,?,?,?,?,? )", users)
         conn.commit()
 
