@@ -1,5 +1,6 @@
 import vk_api
 import time
+import os
 import random
 import sqlite3
 import json
