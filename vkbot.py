@@ -11,7 +11,6 @@ from shop import *
 headers = {'accept':'*/*',
            'user-agent':'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36'}
 
-token = '3b272149e846cb2d19de6579676c40d9e88a53146d41cfa35eac83346d649c195aa5ffb3b37cea1444f33'
 
 vk = vk_api.VkApi(token=token)
 vk._auth_token()
